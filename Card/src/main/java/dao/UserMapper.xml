@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserMapper">
+	<select id="selectByUname"  resultType="MyUserTable" parameterType="MyUser">
+		select * from usertable where uname = #{uname}
+	</select>
+	<insert id="register" parameterType="MyUser">
+		insert into usertable (id,uname,upwd) values(null,#{uname},#{upwd}) 
+	</insert>
+	<select id="login" parameterType="MyUser" resultType="MyUserTable">
+		select * from usertable where uname=#{uname} and upwd=#{upwd}
+	</select>
+</mapper>

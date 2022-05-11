@@ -1,0 +1,21 @@
+create database Card;
+
+use Card;
+
+create table usertable(
+	id int(11) not null primary key auto_increment,					-- 编号
+	uname varchar(50) not null,															-- 用户名
+	upwd varchar(32) not null																-- 密码
+)
+
+create table cardtable(
+	id int(11) not null primary key auto_increment,					-- 编号
+	name varchar(50) not null,															-- 名称
+	telephone varchar(50) not null,													-- 电话
+	email varchar(50),																			-- 邮箱
+	company varchar(50),																		-- 单位
+	post varchar(50),																				-- 职务
+	address varchar(50),																		-- 地址
+	logoName varchar(30),																		-- 图片
+	user_id int(11) not null																-- 所属用户
+)
